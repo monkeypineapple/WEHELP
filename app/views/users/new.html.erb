@@ -8,8 +8,6 @@
 <% end %>
 
 <%= form_with model: @user, url: '/users', method: 'POST' do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %><br>
   <%= f.label :username %>
   <%= f.text_field :username %><br>
   <%= f.label :password %>

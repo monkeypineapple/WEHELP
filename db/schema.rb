@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_21_175904) do
+ActiveRecord::Schema.define(version: 2020_01_20_215541) do
 
   create_table "comments", force: :cascade do |t|
     t.text "body"
@@ -33,10 +33,10 @@ ActiveRecord::Schema.define(version: 2020_01_21_175904) do
 
   create_table "reviews", force: :cascade do |t|
     t.text "body"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
     t.integer "reviewee_id"
     t.integer "reviewer_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "topics", force: :cascade do |t|
@@ -47,13 +47,14 @@ ActiveRecord::Schema.define(version: 2020_01_21_175904) do
 
   create_table "users", force: :cascade do |t|
     t.string "username"
-    t.string "password"
+    t.string "password_digest"
+    t.string "password_confirmation"
     t.integer "age"
     t.string "city"
     t.string "occupation"
+    t.text "bio"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.text "bio"
   end
 
   add_foreign_key "comments", "posts"

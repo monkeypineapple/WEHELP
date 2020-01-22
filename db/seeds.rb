@@ -6,10 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-user1 = User.create!(username: "YogaNerd", password: "password1234" , age: 26, city: "San Francisco", occupation: "Project Manager", bio: "ddoijfo sldijfowij saoijfoawijv waoifjoawijv e ogfovo 34534tgf wf fdfsalij")
-user2 = User.create!(username: "DogLover42", password: "rubygemfifty3", age: 33, city: "Los Angeles", occupation: "Ruby Engineer", bio: "dljigow;ij osidgvjowirv rwoigj owvowijjv")
-user3 = User.create!(username: "LakerFan24", password: "abracadabra", age: 23, city: "Austin", occupation: "Teacher", bio: "ldkjfwijvojnrwognoigj algnwrjvoiwov e;lfgknorwoijgo4 aeovino;rawivowi")
-user4 = User.create!(username: "HikesRBullshit", password: "24hrcouchlady", age: 44, city: "Pawnee", occupation: "Parks Administrator", bio: "ldkjvowij w;gijvowijv ao;sidgjvowijv")
+user1 = User.create!(username: "YogaNerd", password_digest: "password1234" , password_confirmation: "password1234" , age: 26, city: "San Francisco", occupation: "Project Manager", bio: "ddoijfo sldijfowij saoijfoawijv waoifjoawijv e ogfovo 34534tgf wf fdfsalij")
+user2 = User.create!(username: "DogLover42", password_digest: "rubygemfifty3", password_confirmation: "password1234" ,age: 33, city: "Los Angeles", occupation: "Ruby Engineer", bio: "dljigow;ij osidgvjowirv rwoigj owvowijjv")
+user3 = User.create!(username: "LakerFan24", password_digest: "abracadabra", password_confirmation: "password1234" ,age: 23, city: "Austin", occupation: "Teacher", bio: "ldkjfwijvojnrwognoigj algnwrjvoiwov e;lfgknorwoijgo4 aeovino;rawivowi")
+user4 = User.create!(username: "HikesRBullshit", password_digest: "24hrcouchlady", password_confirmation: "password1234" ,age: 44, city: "Pawnee", occupation: "Parks Administrator", bio: "ldkjvowij w;gijvowijv ao;sidgjvowijv")
 
 love = Topic.create!(topic: "Love")
 work = Topic.create!(topic: "Work")

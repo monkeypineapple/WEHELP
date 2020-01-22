@@ -1,0 +1,11 @@
+<strong><h1><%= @user.username %></h1></strong>
+
+<h2><%= @user.age%></h2>
+<h2><%= @user.city%></h2>
+<h2><%= @user.occupation%></h2>
+<h2><%= @user.bio%></h2>
+    <ul>
+        <% @user.reviewer_reviews.each do |review| %>
+            <li><%= link_to " #{review.body} - #{review.reviewer.username}", review.reviewer %></li>
+        <% end %>
+    </ul>

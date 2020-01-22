@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :posts
   resources :topics
   resources :users
+  resources :sessions, only: [:new, :create, :destroy]
 
   get '/signup', to: 'users#new', as: 'signup'
   delete '/logout', to: 'sessions#destroy', as: 'logout'

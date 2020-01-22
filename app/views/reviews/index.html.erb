@@ -1,2 +1,7 @@
-<h1>Reviews#index</h1>
-<p>Find me in app/views/reviews/index.html.erb</p>
+<h1>Helper Reviews</h1>
+<ul>
+    <% @reviews.each do |review| %>
+    <li><%=link_to "#{review.body} - #{review.reviewee.username}", review.reviewee %></li>
+   
+ <% end %>
+ </ul>

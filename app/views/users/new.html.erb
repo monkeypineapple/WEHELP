@@ -10,6 +10,14 @@
 <%= form_with model: @user, url: '/users', method: 'POST' do |f| %>
   <%= f.label :username %>
   <%= f.text_field :username %><br>
+  <%= f.label :age %>
+  <%= f.number_field :age %><br>
+  <%= f.label :city %>
+  <%= f.text_field :city %><br>
+  <%= f.label :occupation %>
+  <%= f.text_field :occupation %><br>
+  <%= f.label :bio %>
+  <%= f.text_area :bio %><br>
   <%= f.label :password %>
   <%= f.password_field :password %><br>
   <%= f.label "Confirm Password" %>

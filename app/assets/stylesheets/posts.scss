@@ -1,3 +1,33 @@
 // Place all the styles related to the Posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+body {
+    display:grid;
+    grid-template-areas: 
+    "nav nav"
+    "post comments";
+}
+
+* {
+    font-weight: 100;
+    font-family: sans-serif;
+    text-decoration: none;
+}
+
+nav {
+    grid-area: nav;
+    background-color:#d0dfff;
+}
+
+.post {
+    grid-area: info;
+    background-color:#d0fff0;
+    padding: 20px;
+}
+
+.comments {
+    grid-area: posts;
+    background-color:#fff0d0;
+    padding: 20px;
+}
+

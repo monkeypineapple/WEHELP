@@ -1,1 +1,16 @@
-<h1>a post</h1>
+<div class="post">
+    <h1><%= @post.title %></h1>
+    <h2><%= @post.body %></h2>
+</div>
+
+<div class="comments">
+    COMMENTS
+    <ul>
+        <h2><% @post.comments.each do |comment| %></h2>
+            <li><h2><%= link_to "#{comment.body} - #{comment.post.user.username}", user_path %></h2></li>
+            <h3><%= link_to "Review This Helper", new_review_path %></h3>
+        <% end %>
+    </ul>
+
+<%=link_to "Comment on This Post", new_comment_url(@post.id) %><br>
+</div>

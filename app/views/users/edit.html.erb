@@ -1,0 +1,23 @@
+  
+<h1> Edit Your Profile</h1>
+    <%=form_for(@user) do |f| %>
+    <%=f.label :username, "UserName"%>
+    <%=f.text_field :username %><br>
+
+    <%=f.label :password, "Password"%>
+    <%=f.password_field :password %><br>
+
+    <%=f.label :password_confirmation, "Password Confirmation"%>
+    <%=f.password_field :password_confirmation %><br>
+
+    <%=f.label :city, "City"%>
+    <%=f.text_field :city %><br>
+
+    <%=f.label :occupation, "Occupation"%>
+    <%=f.text_field :occupation %><br>
+
+    <%=f.label :bio, "Bio"%>
+    <%=f.text_area :bio %><br>
+
+    <%=f.submit "Save Changes"%>
+<% end %>

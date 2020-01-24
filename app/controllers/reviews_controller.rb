@@ -17,15 +17,6 @@ class ReviewsController < ApplicationController
       render :new
     end
   end
-
-  # def edit
-  # end
-
-  # def update
-  # end
-
-  # def delete
-  # end
   
   private
   def review_params

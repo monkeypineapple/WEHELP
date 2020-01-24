@@ -1,5 +1,9 @@
-<strong><h1>What do you need help with?</h1></strong>
+<div class="question">
+    <strong><h1>What do you need help with?</h1></strong>
+</div>
 
-<% @topics.each do |topic|%>
-<li><%= link_to topic.topic, topic %></li>
-<% end %>
+<div class="topics">
+    <% @topics.each do |topic|%>
+    <li><%= link_to topic.topic, topic %></li>
+    <% end %>
+</div>

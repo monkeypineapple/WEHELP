@@ -28,12 +28,11 @@
             <a class="nav-link" href="/users">Users</a>
           <li class="nav-item">
             <a class="nav-link" href="/topics">Topics</a>
-          </li>
-          <%# <li class="nav-item">
-            <a class="nav-link" href="#">Pricing</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#">Disabled</a> %>
+            <% if current_user %>
+              <li class="nav-item">
+                <a class="nav-link" <%= link_to "My Page", user_path(current_user) %></a>
+              </li>
+            <% end %>
           </li>
         </ul>
       </div>

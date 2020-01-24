@@ -1,7 +1,13 @@
-<h1>These are all the posts</h1>
-<ul>
-    <% Post.all.each do |post| %>
-        <li><%= link_to post.title, post %></li>
-        <%= post.body %>
-    <% end %>
-</ul>
+<div class="title">
+    <h1>These are all the posts</h1><br><br>
+    <h2><%=link_to "Create New Post", new_post_path%></h2>
+</div>
+    
+<div class="posts">
+    <ul>
+        <% Post.all.each do |post| %>
+            <li><%= link_to post.title, post %></li>
+            <%= post.body %>
+        <% end %>
+    </ul>
+</div>

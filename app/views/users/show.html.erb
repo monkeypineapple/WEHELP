@@ -7,8 +7,9 @@
     <h2>About me: <%= @user.bio%></h2>
 
     <% if current_user.id == params[:id].to_i %>
-    <%= link_to 'Edit', "/users/#{current_user.id}/edit"%>
-    <%= link_to 'Delete Your Profile', "/delete_account", method: 'DELETE'%>
+        <%= link_to 'Edit', "/users/#{current_user.id}/edit"%>
+        <%= link_to 'Delete Your Profile', "/delete_account", method: 'DELETE'%>
+        <%= link_to 'Log Out', "/logout", method: 'DELETE'%>
 
     <% end %>
 </div>
@@ -17,8 +18,8 @@
     <h3>My Posts:</h3>
         <ul>
         <% @user.posts.each do |post|%>
-    <h2>  <%= link_to post.title, post %></h2>
-    <% end %>
+            <h2><%= link_to post.title, post %></h2>
+        <% end %>
         </ul>
 </div>
 
@@ -27,7 +28,7 @@
     <h3>What people are saying about me:</h3>
         <ul>
             <% @user.reviewer_reviews.each do |review| %>
-                <li><%= link_to " #{review.body} - #{review.reviewer.username}", review.reviewer %></li>
+                <li><%= link_to " #{review.body}  #{review.reviewer.username}", review.reviewer %></li>
             <% end %>
         </ul>
 

@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :comments, except: [:new]
   resources :posts
   resources :topics
-  resources :users
+  resources :users, except: [:new]
   resources :sessions, only: [:new, :create, :destroy]
 
   get '/signup', to: 'users#new', as: 'signup'

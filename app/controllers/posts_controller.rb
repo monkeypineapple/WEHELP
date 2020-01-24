@@ -12,10 +12,10 @@ class PostsController < ApplicationController
     end
 
     def create
-        @post = Post.new(post_params)
-        if @post.save
+        @post.user_id = current_user.id
+        if @post.save!
            
-          redirect_to @post
+            redirect_to post_path(@post)
         else 
           flash[:errors] = @post.errors.full_messages
           render :new

@@ -1,11 +1,35 @@
-<strong><h1><%= @user.username %></h1></strong>
+<div class="info">
+    <strong><h1><%= @user.username %></h1></strong>
 
-<h2><%= @user.age%></h2>
-<h2><%= @user.city%></h2>
-<h2><%= @user.occupation%></h2>
-<h2><%= @user.bio%></h2>
-    <ul>
-        <% @user.reviewer_reviews.each do |review| %>
-            <li><%= link_to " #{review.body} - #{review.reviewer.username}", review.reviewer %></li>
-        <% end %>
-    </ul>
+    <h2>Age: <%= @user.age%></h2>
+    <h2>Location: <%= @user.city%></h2>
+    <h2>Occupation: <%= @user.occupation%></h2>
+    <h2>About me: <%= @user.bio%></h2>
+
+    <% if current_user.id == params[:id].to_i %>
+    <%= link_to 'Edit', "/users/#{current_user.id}/edit"%>
+    <%= link_to 'Delete Your Profile', "/delete_account", method: 'DELETE'%>
+
+    <% end %>
+</div>
+
+<div class="posts">
+    <h3>My Posts:</h3>
+        <ul>
+        <% @user.posts.each do |post|%>
+    <h2>  <%= link_to post.title, post %></h2>
+    <% end %>
+        </ul>
+</div>
+
+
+<div class="reviews">
+    <h3>What people are saying about me:</h3>
+        <ul>
+            <% @user.reviewer_reviews.each do |review| %>
+                <li><%= link_to " #{review.body} - #{review.reviewer.username}", review.reviewer %></li>
+            <% end %>
+        </ul>
+
+    <%= link_to "All users", '/users' %>
+</div>

@@ -1,0 +1,5 @@
+<strong><h1><%= @topic.topic %></h1></strong>
+
+<% @topic.posts.each do |post|%>
+<%= link_to post.title, post %>
+<% end %>

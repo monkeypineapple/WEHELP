@@ -3,6 +3,7 @@ class SessionsController < ApplicationController
   before_action :current_user, except: [:new, :create]
 
   def new
+    
   end
 
   def create
